@@ -1,0 +1,13 @@
+CREATE DATABASE usuario;
+
+CREATE TABLE usuario_dados(
+    id_usuario int AUTO_INCREMENT NOT NULL,
+    nome varchar(50) NOT NULL,
+    dtNasc date NOT NULL,
+    email varchar(50) NOT NULL,
+    descricao text(1000),
+    tecnologias varchar(30),
+    foto blob,
+    senha varchar(50) NOT NULL,
+    PRIMARY KEY(id_usuario)
+);
