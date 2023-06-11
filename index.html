@@ -17,11 +17,11 @@
         <h3>Preencha os campos abaixo para realizar seu cadastro!</h3>
 
         <div id="container">
-            <form method="POST" action="assets/php/" name="">
+            <form method="POST" action="assets/php/cadastro.php" name="">
                 
 
                 <label for="txtNome">Nome:</label><br>
-                <input type="text" name="txtName" id="txtName" required/><br><br>
+                <input type="text" name="txtNome" id="txtNome" required/><br><br>
                 
                 <label for="txtDtNasc">Data de Nascimento:</label><br>
                 <input type="date" name="txtDtNasc" required/><br><br>
@@ -35,18 +35,18 @@
                 <label>Tecnologias domninantes:</label><br>
                 <table cellspacing="20px">
                     <tr>
-                        <td><input type="checkbox" name="tecnologias" /><label>HTML</label></td>
-                        <td><input type="checkbox" name="tecnologias" /><label>CSS</label></td>
+                        <td><input type="checkbox" name="tecnologias" value="html" /><label>HTML</label></td>
+                        <td><input type="checkbox" name="tecnologias" value="css" /><label>CSS</label></td>
                     </tr>
                     
                     <tr>
-                        <td><input type="checkbox" name="tecnologias" /><label>JavaScript</label></td>
-                        <td><input type="checkbox" name="tecnologias" /><label>PHP</label></td>
+                        <td><input type="checkbox" name="tecnologias" value="javascript" /><label>JavaScript</label></td>
+                        <td><input type="checkbox" name="tecnologias" value="php" /><label>PHP</label></td>
                     </tr>
 
                     <tr>
-                        <td><input type="checkbox" name="tecnologias" /><label>SQL</label></td>
-                        <td><input type="checkbox" name="tecnologias" /><label>Java</label></td>
+                        <td><input type="checkbox" name="tecnologias" value="sql" /><label>SQL</label></td>
+                        <td><input type="checkbox" name="tecnologias" value="java" /><label>Java</label></td>
                     </tr>
                 </table><br><br>
 
@@ -61,8 +61,9 @@
 
                 <input type="submit" value="Cadastrar!" />
 
-                <p>Mensagem de erro</p>
+                <p id="msgErro">Mensagem de erro</p>
             </form>
         </div>
+        
     </body>
 </html>
