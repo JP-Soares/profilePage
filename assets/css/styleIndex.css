@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Mitr', sans-serif;
+    background-color: #ACE9B3;
+}
+
+h1, h3{
+    text-align: center;
+}
+
+#container{
+    box-sizing: border-box;
+    width: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5%;
+    margin: 50px auto;
+    background-color: #FFF;
+}
+
+p{
+    color: red;
+    background-color: rgb(253, 253, 151);
+    text-align: center;
+    font-size: 20px;
+    display: none;
+}
+
+label{
+    font-size: 20px;
+}
+
+input[type="text"], [type="password"], [type="email"], [type="date"], textarea{
+    width: 20vw;
+    font-size: large;
+    border-radius: 2px;
+}
+
+input[type="text"]:focus, [type="password"]:focus, [type="email"]:focus, [type="date"]:focus, textarea:focus{
+    outline-color: green;
+}
+
+textarea{
+    height: 15vh;
+}
+
+input[type="submit"]{
+    font-size: 20px;
+    width: 20.5vw;
+    height: 5vh;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    background-color: #ACE9B3;
+}
+
+#foto{
+    width: 10vw;
+    height: 10vw;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+input[type="checkbox"]{
+    height: 3vh;
+    width: 2vw;
+}

@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Mitr', sans-serif;
+    background-color: #ACE9B3;
+}
+
+img{
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 10vw;
+    height: 20vh;
+    position: relative;
+}
+
+h1{
+    text-align: center;
+}
+
+#container{
+    box-sizing: border-box;
+    width: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5%;
+    margin: 50px auto;
+    background-color: #FFF;
+}
+
+#descricao{
+    position: relative;
+    right: 3vw;
+}
