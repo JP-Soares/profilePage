@@ -25,16 +25,21 @@
     $verificar = mysqli_query($con, "SELECT * from usuario_dados where email='$email'");
 
 
-    // $nomeArquivo = $_FILES['foto']['name'];
-    // $caminhoAtualArquivo = $_FILES['foto']['tmp_name'];
-    // $caminhoSalvar = '../img/'.$nomeArquivo;
-    // move_uploaded_file($caminhoAtualArquivo, $caminhoSalvar);
-    // $pasta = "../img";
-    // $diretorio = dir($pasta);
+    $nomeArquivo = $_FILES['foto']['name'];
+    $caminhoAtualArquivo = $_FILES['foto']['tmp_name'];
+    $caminhoSalvar = '../img/'.$nomeArquivo;
+    move_uploaded_file($caminhoAtualArquivo, $caminhoSalvar);
+    $pasta = "../img";
+    $diretorio = dir($pasta);
 
     if(mysqli_num_rows($verificar) == 0){
         if($senha == $senhaConfirma){
-            $sql = "INSERT INTO usuario_dados (nome, dtNasc, email, descricao, tecnologias, senha) VALUES ('$nome', '$dtNasc', '$email', '$descricao', '$tecnologias', '$senhaConfirma')";
+            
+            if($_FILES["foto"]){
+                $sql = "INSERT INTO usuario_dados (nome, dtNasc, email, descricao, tecnologias, foto, senha) VALUES ('$nome', '$dtNasc', '$email', '$descricao', '$tecnologias', '$caminhoSalvar', '$senhaConfirma')";
+            }else{
+                $sql = "INSERT INTO usuario_dados (nome, dtNasc, email, descricao, tecnologias, senha) VALUES ('$nome', '$dtNasc', '$email', '$descricao', '$tecnologias', '$senhaConfirma')";
+            }
 
             if($con->query($sql) == true){
                 header('Location: ../../profilePage.html');
