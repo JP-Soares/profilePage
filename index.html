@@ -17,7 +17,7 @@
         <h3>Preencha os campos abaixo para realizar seu cadastro!</h3>
 
         <div id="container">
-            <form method="POST" action="assets/php/cadastro.php" name="">
+            <form method="POST" action="assets/php/cadastro.php" name="" enctype="multipart/form-data">
                 
 
                 <label for="txtNome">Nome:</label><br>
@@ -35,23 +35,26 @@
                 <label>Tecnologias domninantes:</label><br>
                 <table cellspacing="20px">
                     <tr>
-                        <td><input type="checkbox" name="tecnologias" value="html" /><label>HTML</label></td>
-                        <td><input type="checkbox" name="tecnologias" value="css" /><label>CSS</label></td>
+                        <td><input type="checkbox" name="tecnologias[]" value="html" /><label>HTML</label></td>
+                        <td><input type="checkbox" name="tecnologias[]" value="css" /><label>CSS</label></td>
                     </tr>
                     
                     <tr>
-                        <td><input type="checkbox" name="tecnologias" value="javascript" /><label>JavaScript</label></td>
-                        <td><input type="checkbox" name="tecnologias" value="php" /><label>PHP</label></td>
+                        <td><input type="checkbox" name="tecnologias[]" value="javascript" /><label>JavaScript</label></td>
+                        <td><input type="checkbox" name="tecnologias[]" value="php" /><label>PHP</label></td>
                     </tr>
 
                     <tr>
-                        <td><input type="checkbox" name="tecnologias" value="sql" /><label>SQL</label></td>
-                        <td><input type="checkbox" name="tecnologias" value="java" /><label>Java</label></td>
+                        <td><input type="checkbox" name="tecnologias[]" value="sql" /><label>SQL</label></td>
+                        <td><input type="checkbox" name="tecnologias[]" value="java" /><label>Java</label></td>
                     </tr>
                 </table><br><br>
 
                 <label for="foto">Sua foto de perfil (Opicional):</label><br>
-                <input type="file" name="foto" id="foto" /><br><br>
+                <label class="file-input-wrapper">
+                    <input type="file" name="fotoPerfil" id="foto" />
+                    <img id="imagemPreview" name="imgPrev" src="" alt="Clique aqui!" style="max-width: 100%;">
+                </label><br><br>
                 
                 <label for="txtSenha">Crie um senha:</label><br>
                 <input type="password" name="txtSenha" id="txtSenha" required/><br><br>
@@ -64,6 +67,8 @@
                 <p id="msgErro">Mensagem de erro</p>
             </form>
         </div>
-        
+
+        <script type="text/javascript" src="assets/js/foto.js"></script>
+
     </body>
 </html>

@@ -17,28 +17,33 @@
     $dtNasc = mysqli_real_escape_string($con, trim($_POST['txtDtNasc']));
     $email = mysqli_real_escape_string($con, trim($_POST['txtEmail']));
     $descricao = mysqli_real_escape_string($con, trim($_POST['txtDescricao']));
-    $tecnologias = mysqli_real_escape_string($con, trim($_POST['tecnologias']));
+    $tecnologias = $_POST['tecnologias'];
 
     $senha = mysqli_real_escape_string($con, trim($_POST['txtSenha']));
     $senhaConfirma = mysqli_real_escape_string($con, trim($_POST['txtConfirmaSenha']));
 
     $verificar = mysqli_query($con, "SELECT * from usuario_dados where email='$email'");
 
-
-    $nomeArquivo = $_FILES['foto']['name'];
-    $caminhoAtualArquivo = $_FILES['foto']['tmp_name'];
-    $caminhoSalvar = '../img/'.$nomeArquivo;
-    move_uploaded_file($caminhoAtualArquivo, $caminhoSalvar);
-    $pasta = "../img";
-    $diretorio = dir($pasta);
-
     if(mysqli_num_rows($verificar) == 0){
         if($senha == $senhaConfirma){
             
-            if($_FILES["foto"]){
-                $sql = "INSERT INTO usuario_dados (nome, dtNasc, email, descricao, tecnologias, foto, senha) VALUES ('$nome', '$dtNasc', '$email', '$descricao', '$tecnologias', '$caminhoSalvar', '$senhaConfirma')";
+            if(isset($_FILES['fotoPerfil'])){
+                echo"aqui";
+                $nomeArquivo = $_FILES['fotoPerfil']['name'];
+                $caminhoAtualArquivo = $_FILES['fotoPerfil']['tmp_name'];
+                $caminhoSalvar = '../img/'.$nomeArquivo;
+                move_uploaded_file($caminhoAtualArquivo, $caminhoSalvar);
+                $pasta = "../img";
+                $diretorio = dir($pasta);
+
+                $tecnologiasString = implode(', ',$tecnologias);
+                
+                echo"AQUI";
+                $sql = "INSERT INTO usuario_dados (nome, dtNasc, email, descricao, tecnologias, foto, senha) VALUES ('$nome', '$dtNasc', '$email', '$descricao', '$tecnologiasString', '$caminhoSalvar', '$senhaConfirma')";
             }else{
-                $sql = "INSERT INTO usuario_dados (nome, dtNasc, email, descricao, tecnologias, senha) VALUES ('$nome', '$dtNasc', '$email', '$descricao', '$tecnologias', '$senhaConfirma')";
+                $tecnologiasString = implode(', ',$tecnologias);
+                echo"AQUI2";
+                $sql = "INSERT INTO usuario_dados (nome, dtNasc, email, descricao, tecnologias, senha) VALUES ('$nome', '$dtNasc', '$email', '$descricao', '$tecnologiasString', '$senhaConfirma')";
             }
 
             if($con->query($sql) == true){

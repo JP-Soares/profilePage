@@ -17,13 +17,16 @@
         <h3>Preencha os campos abaixo para realizar seu login!</h3>
 
         <div id="container">
-            <label for="txtEmail">Email:</label><br>
-            <input type="email" name="txtEmail" id="txtEmail" required/><br><br>
+            
+            <form method="POST" action="assets/php/login.php" name="">
+                <label for="txtEmail">Email:</label><br>
+                <input type="email" name="txtEmail" id="txtEmail" required/><br><br>
 
-            <label for="txtSenha">Senha:</label><br>
-            <input type="password" name="txtSenha" id="txtSenha" required/><br><br>
+                <label for="txtSenha">Senha:</label><br>
+                <input type="password" name="txtSenha" id="txtSenha" required/><br><br>
 
-            <input type="submit" value="Login!" />
+                <input type="submit" value="Login!" />
+            </form>
 
             <p>Mensagem de erro!</p>
         </div>
