@@ -28,3 +28,20 @@ h1{
     margin: 50px auto;
     background-color: #FFF;
 }
+
+table{
+    border-collapse: collapse;
+}
+
+.celDescricao{
+    border-right: 3px solid black;
+}
+
+.celTecnologias{
+    border-left: 3px solid black;
+}
+
+.celDescricao, .celTecnologias{
+    border-bottom: 3px solid black;
+    padding: 20px;
+}

@@ -21,12 +21,25 @@ h1, h3{
     background-color: #FFF;
 }
 
-p{
+#msgErro{
     color: red;
     background-color: rgb(253, 253, 151);
     text-align: center;
     font-size: 20px;
     display: none;
+}
+
+#msgLogin{
+    text-align: center;
+    font-size: 20px;
+}
+
+#msgLogin a{
+    text-decoration: none;
+}
+
+#msgLogin a:hover{
+    text-decoration: underline;
 }
 
 label{
