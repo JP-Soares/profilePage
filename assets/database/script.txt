@@ -6,7 +6,7 @@ CREATE TABLE usuario_dados(
     dtNasc date NOT NULL,
     email varchar(50) NOT NULL,
     descricao text(1000),
-    tecnologias varchar(30),
+    tecnologias varchar(100),
     foto blob,
     senha varchar(50) NOT NULL,
     PRIMARY KEY(id_usuario)

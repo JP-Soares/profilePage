@@ -13,24 +13,10 @@
 
         while($dadosUsuario = mysqli_fetch_assoc($sqlVerify)){
             $idUsuario = $dadosUsuario["id_usuario"];
-            $nome = $dadosUsuario["nome"];
-            $dtNasc = $dadosUsuario["dtNasc"];
-            $email = $dadosUsuario["email"];
-            $descricao = $dadosUsuario["descricao"];
-            $tecnologias = $dadosUsuario["tecnologias"];
-            $foto = $dadosUsuario["foto"];
-            $senha = $dadosUsuario["senha"];
         }
         session_start();
-        $_SESSION["idUsuario"] = $idUsuario;
-        $_SESSION["nome"] = $nome;
-        $_SESSION["dtNasc"] = $dtNasc;
-        $_SESSION["email"] = $email;
-        $_SESSION["descricao"] = $descricao;
-        $_SESSION["tecnologias"] = $tecnologias;
-        $_SESSION["foto"] = $foto;
-        $_SESSION["senha"] = $senha;
-
+        $_SESSION["id_usuario"] = $idUsuario;
+        
         header('Location: ../../profilePage.php');
     }
 ?>
